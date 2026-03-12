@@ -14,8 +14,7 @@ const AcademicCalendarSchema = new mongoose.Schema(
     academicYearId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'AcademicYear',
-      required: true,
-      index: true
+      required: true
     }
   },
   { timestamps: true }

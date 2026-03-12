@@ -47,7 +47,7 @@ const StaffSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'AcademicYear',
       required: true,
-      index: true
+      // Index defined below in compound index (academicYearId + fullName)
     }
   },
   { timestamps: true }

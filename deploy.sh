@@ -13,7 +13,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 # Config
-APP_DIR="/root/deploy.sh"
+APP_DIR="/root/School_SM_backend/deploy.sh"
 PM2_APP_NAME="School_SM_backend"
 BRANCH="main"
 

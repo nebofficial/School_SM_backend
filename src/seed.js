@@ -188,6 +188,37 @@ async function main() {
     const staff = await seedCollection(Staff, 'Staff (Teachers)', (i) => {
         const fn = i % 2 === 0 ? MALE_NAMES[i % 20] : FEMALE_NAMES[i % 20];
         const ln = LAST_NAMES[i % 20];
+
+        // First staff: dedicated school admin account
+        if (i === 0) {
+            return {
+                fullName: 'System Admin',
+                code: 'ADMIN-001',
+                nationalId: 'NID-ADMIN-0001',
+                email: 'admin@school.edu.np',
+                phone: phone(40000000, 0),
+                gender: 'Male',
+                bloodGroup: BLOOD_GROUPS[0],
+                religion: RELIGIONS[0],
+                birthDate: new Date('1985-01-01'),
+                presentAddress: ADDRESSES[0],
+                permanentAddress: ADDRESSES[0],
+                role: 'admin',
+                department: 'Administration',
+                qualification: 'M.Ed',
+                experienceYears: 10,
+                joinDate: new Date('2020-04-01'),
+                username: 'admin',
+                password: 'password',
+                salaryGrade: 'Grade-1',
+                salaryType: 'Monthly',
+                isViewOnWeb: false,
+                status: 'active',
+                academicYearId: ayId,
+            };
+        }
+
+        // Other staff: regular teachers
         return {
             fullName: `${fn} ${ln}`, code: `TCH-${pad(i + 1)}`,
             nationalId: `NID-TCH-${3000000 + i}`, email: email(fn, ln, 100 + i),

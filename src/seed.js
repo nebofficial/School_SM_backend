@@ -218,6 +218,35 @@ async function main() {
             };
         }
 
+        // Second staff: office staff (for "Staff / Office" login)
+        if (i === 1) {
+            return {
+                fullName: 'Office Staff',
+                code: 'STF-001',
+                nationalId: 'NID-STF-0001',
+                email: 'staff@school.edu.np',
+                phone: phone(40000001, 0),
+                gender: 'Female',
+                bloodGroup: BLOOD_GROUPS[0],
+                religion: RELIGIONS[0],
+                birthDate: new Date('1990-05-15'),
+                presentAddress: ADDRESSES[0],
+                permanentAddress: ADDRESSES[0],
+                role: 'staff',
+                department: 'Office',
+                qualification: 'B.A',
+                experienceYears: 5,
+                joinDate: new Date('2021-04-01'),
+                username: 'staff',
+                password: 'staff@123',
+                salaryGrade: 'Grade-2',
+                salaryType: 'Monthly',
+                isViewOnWeb: true,
+                status: 'active',
+                academicYearId: ayId,
+            };
+        }
+
         // Other staff: regular teachers
         return {
             fullName: `${fn} ${ln}`, code: `TCH-${pad(i + 1)}`,
